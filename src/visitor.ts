@@ -41,7 +41,6 @@ export class ApolloNextSSRVisitor extends ClientSideBaseVisitor<
         "@apollo/client"
       ),
 
-      reactApolloVersion: getConfigValue(rawConfig.reactApolloVersion, 2),
       excludePatterns: getConfigValue(rawConfig.excludePatterns, null),
       excludePatternsOptions: getConfigValue(
         rawConfig.excludePatternsOptions,

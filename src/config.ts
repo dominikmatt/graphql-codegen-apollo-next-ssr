@@ -69,23 +69,6 @@ export type Config = {
   withHooks?: boolean;
 
   /**
-   * @description Sets the version of react-apollo.
-   * @default 2
-   *
-   * @exampleMarkdown
-   * ```yml
-   * generates:
-   * path/to/file.ts:
-   *  plugins:
-   *    - typescript
-   *    - typescript-operations
-   *    - typescript-react-apollo
-   *  config:
-   *    reactApolloVersion: 3
-   * ```
-   */
-  reactApolloVersion?: 2 | 3;
-  /**
    * @description Regexp to exclude a certain operation name
    */
   excludePatterns?: string;

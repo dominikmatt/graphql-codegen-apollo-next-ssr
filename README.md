@@ -15,7 +15,6 @@ By declaring a top level query we can save rendering time and provide a simpler 
 ## Configuration
 - `excludePatterns` (default: null): regexp to exclude operation names
 - `excludePatternsOptions` (default: ''): regexp flags to exclude operation names
-- `reactApolloVersion` (default: 2): apollo client version
 - `apolloCacheImportFrom` (default: apollo-cache-inmemory): apollo-cache-inmemory dependency
 - `apolloImportFrom` (default: apollo-client v2 or @apollo/client v3): apollo client dependency
 - `apolloCacheImportFrom` (default: apollo-cache-inmemory v2 or @apollo/client v3): apollo cache client dependency

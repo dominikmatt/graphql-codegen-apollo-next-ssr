@@ -123,7 +123,6 @@ describe("Apollo Next SSr", () => {
         schema,
         docs,
         {
-          reactApolloVersion: 3,
         },
         {
           outputFile: "graphql.tsx",
