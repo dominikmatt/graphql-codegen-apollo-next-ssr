@@ -50,7 +50,7 @@ describe("Apollo Next SSr", () => {
       { outputFile: "" }
     );
     const merged = mergeOutputs([tsOutput, tsDocumentsOutput, output]);
-    validateTs(merged, undefined, true, false, playground);
+    validateTs(merged, undefined, true, false, [], playground);
 
     return merged;
   };
@@ -232,7 +232,7 @@ export async function getServerPageFeed
     export const withPageFeed = (optionsFunc?: (router: NextRouter)=> QueryHookOptions<FeedQuery, FeedQueryVariables>) => (WrappedComponent:PageFeedComp) : NextPage  => (props) => {
                 const router = useRouter()
                 const options = optionsFunc ? optionsFunc(router) : {};
-                const {data, error } = useQuery(FeedDocument, options)    
+                const {data, error } = useQuery<FeedQuery, FeedQueryVariables>(FeedDocument, options)    
                 return <WrappedComponent {...props} data={data} error={error} /> ;
                    
             }; `);
@@ -303,7 +303,7 @@ export const usefeed = (
   optionsFunc?: (router: NextRouter)=> QueryHookOptions<PagefeedQueryQuery, PagefeedQueryQueryVariables>) => {
   const router = useRouter();
   const options = optionsFunc ? optionsFunc(router) : {};
-  return useQuery(PagefeedQueryDocument, options);
+  return useQuery<PagefeedQueryQuery, PagefeedQueryQueryVariables>(PagefeedQueryDocument, options);
 };`);
     await validateTypeScript(content, schema, docs, {});
   });
@@ -411,7 +411,7 @@ export async function getServerPagePageFeedQuery
   optionsFunc?: (router: NextRouter)=> QueryHookOptions<PageFeedQueryQuery, PageFeedQueryQueryVariables>) => {
   const router = useRouter();
   const options = optionsFunc ? optionsFunc(router) : {};
-  return useQuery(PageFeedQueryDocument, options);
+  return useQuery<PageFeedQueryQuery, PageFeedQueryQueryVariables>(PageFeedQueryDocument, options);
 };`);
     await validateTypeScript(content, schema, docs, {});
   });
